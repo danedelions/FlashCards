@@ -1,0 +1,72 @@
+body {
+    background-image: url('images/background.jpg');
+    background-position: cover;
+    font-family: 'Poppins', sans-serif;
+}
+
+h3 {
+    color: white;
+}
+
+.container {
+    padding: 15px;
+}
+
+.title {
+    margin: auto;
+    font-size: 32px;
+    font-style: bold;
+}
+
+.flashcard-container {
+    border: 2px black dotted;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flashcards {
+   width: 300px;
+   height: 300px;
+   margin: 10px;
+   background-color: #0d0e14;
+   position: relative;
+}
+.flashcards p {
+    padding: 15px;
+}
+
+.flashcards .front {
+    position: relative;
+    transform: rotateX(0deg) rotateZ(0deg);
+    transition: all 0.5s 0.5s;
+    z-index: 1;
+    justify-items: center;
+    align-items: center;
+    display: grid;
+    height: 100%;
+    width: 100%;
+}
+
+.flashcards .back {
+    position: absolute;
+    background-color: beige;
+    height: 100%;
+    width: 100%;
+    transition: all 0.5s 0s;
+    transform: rotateX(90deg) rotateZ(90deg);
+    overflow: auto;
+    top: 0;
+}
+
+.flashcards:hover .front {
+    transition: all 0.5s 0s;
+    transform: rotateX(90deg) rotateZ(90deg);
+    position: relative;
+}
+
+.flashcards:hover .back {
+    transition: all 0.5s 0.5s;
+    transform: rotateX(0deg) rotateZ(0deg);
+    position: absolute;
+}
